@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://image.saltedfishjun.top/i/2024/07/12/n7hysr.gif"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# MC各种服务端
+
+这里是说明文档，这里会简单介绍各个核心以及插件。">
+<meta property="og:title" content="MC各种服务端">
+<meta property="og:description" content="# MC各种服务端
+
+这里是说明文档，这里会简单介绍各个核心以及插件。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://saltedfishjun.github.io/post/MC-ge-zhong-fu-wu-duan.html">
+<meta property="og:image" content="https://image.saltedfishjun.top/i/2024/07/12/n7hysr.gif">
+<title>MC各种服务端</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">MC各种服务端</h1>
+<div class="title-right">
+    <a href="https://saltedfishjun.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/saltedfishjun/saltedfishjun.github.io/issues/5" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>MC各种服务端</h1>
+<p>这里是说明文档，这里会简单介绍各个核心以及插件。了解更多请自行bing，百度是个**。<br>
+部分介绍收集自网络</p>
+<h1>核心介绍</h1>
+<p>核心是一个.jar文件，使用启动命令将其启动并完成配置就可以开服开服教程可以看我的blog文章：<a href="https://mmeiblog.cn/archives/shi-yong-mcsmmian-ban-da-jian-wo-de-shi-jie-fu-wu-qi" rel="nofollow">使用mcsm面板搭建我的世界服务器|meiのblog (mmeiblog.cn)</a></p>
+<h2>原版</h2>
+<p>由mojang官方制作的核心，不推荐使用。</p>
+<h2>Hose</h2>
+<p>Java版 核心</p>
+<blockquote>
+<p>MITE 是一款提高游戏的生存方面难度的综合类 MOD，通过重新定义并调整游戏机制来增加生存的难度。此为 MITE 官方服务端，无法安装其他任何 MOD 包括 Forge。<br>
+作者：PixelBBS <a href="https://www.bilibili.com/read/cv19386482/" rel="nofollow">https://www.bilibili.com/read/cv19386482/</a> 出处：bilibili</p>
+</blockquote>
+<h3>Vanilla</h3>
+<p>我的世界Vanilla核心是官方提供的原版游戏服务器核心，它是最基本的服务器核心，可以提供原版游戏的所有功能。Vanilla有着简单的配置方式和不错的稳定性，但功能不够强大，无法满足大多数服务器的需求。</p>
+<h2>Fabric</h2>
+<p>Fabric服务端需要搭配Fabric API才可以安装mod，本站不提供Fabric服务端下载，因为你可以在官网自行搭配Fabric组合。<br>
+<a href="https://fabricmc.net/use/server/" rel="nofollow">Download Minecraft Server Launcher | Fabric (fabricmc.net)</a></p>
+<blockquote>
+<p>Fabric是一个轻量级的MOD API，用于Minecraft1.14及以上版本，主要作者是asiekierka和modmuss50。<br>
+Fabric由两部分组成，包括Fabric API和Fabric Loader，Fabric Loader主要用来实现MOD加载功能，Fabric提供一些基础的接口供开发者使用，允许其他MOD注册物品、模型、方块、图形界面等，允许MOD通过SpongePowered Mixin修改Minecraft字节码，这一点相对于Forge来说更加安全，因为Mixin能够更好的控制字节码的改动。<br>
+Fabric并不采用 Mod Coder Pack。它有自己的反混淆工程，名叫“yam”（原名 pomf）。yarn 是开源的，任何人可以贡献，开源协议是 CC0 1.0 Universal。因为 Mod Coder Pack 协议限制，给 Fabric 的贡献的内容不能来源于 Mod Coder Pack。<br>
+Fabric更新的速度非常快，基本上党最新版本的Minecraft发行的时候，Fabric会在最短的时间内跟进，真的非常方便！---zeruns</p>
+</blockquote>
+<h2>Forge</h2>
+<p>Forge服务端，支持Forge mods</p>
+<h3>介绍</h3>
+<blockquote>
+<p>目前 Minecraft 的主流 API，目前有半数以上的模组都在使用 Forge，以易于与 Minecraft Java Edition 的驳接。<br>
+一般情況下 Forge 的更新速度很快，一般在 Minecraft 正式版本发布后的一天内更新，偶尔有出现因为一些测试需求在 Minecraft 快照发布后更新的（出现过适用于特定快照版本的 FML）。<br>
+Forge 是一个版本支持度极高的 API，远古版本 ~ 最新版本 均有支持。<br>
+运行任何带有 Forge 的 Minecraft 时，在主界面点击“Mods...”按钮均可显示正在运行的模组，其中 Minecraft、Minecraft Forge、Forge Mod Loader (FML) 和 Mod Code Pack (MCP) 都是 Forge 的核心模组（旧版没有 Minecraft，新版没有 FML 和 MCP），必定默认出现在模组列表。---mcbbs</p>
+</blockquote>
+<h2>混合端</h2>
+<p>同时支持模组和插件的服务端</p>
+<h3>Kcauldron</h3>
+<h4>支持</h4>
+<p>Forge模组，Spigot插件</p>
+<h4>介绍</h4>
+<p>老式 Forge 服务端，兼容插件 + Mod</p>
+<h3>Thermos</h3>
+<h4>支持</h4>
+<p>Forge模组和Bukkit插件</p>
+<h4>介绍</h4>
+<p>1.7.10 Forge 服务端，兼容插件 + Mod，兼容性好.KCauldron的优化版本</p>
+<h3>Uranium</h3>
+<h4>支持</h4>
+<p>Bukkit, Spigot 插件以及 1.7.10 的 Forge mod</p>
+<h4>介绍</h4>
+<p>1.7.10 Forge 服务端，兼容插件 + Mod。Uranium端（不断更新）是kc（停止更新）以及Thermos（停止更新）的优化以及后续版本，修复了更多的mod以及服务器bug，稳定性和适用性更强，并且是国人制作的服务端，更适合中国的腐竹。Uranium 是一款基于 KCauldron 进行大量修复以及优化的服务端，并且整合了部分 Thermos 对服务端进行的修复，能够兼容 Bukkit, Spigot 插件以及 1.7.10 的 Forge mod，并没有计划向高版本兼容</p>
+<h3>Arclight</h3>
+<h4>支持</h4>
+<p>Arclight支持Forge模组，Bukkit插件。</p>
+<h4>介绍</h4>
+<p>我的世界Arclight核心是一个开源的我的世界服务器核心，它是为那些寻求一个轻量级、可扩展的我的世界服务器核心而设计的。它包括了原版游戏的全部功能，并且拥有高度的自定义和扩展性。</p>
+<h3>Catserver</h3>
+<h4>支持</h4>
+<p>CatServer支持Forge模组，Bukkit+Spigot插件。</p>
+<h4>介绍</h4>
+<p>国内最早开发的高版本核心, 支持大部分MOD和插件同时稳定运行</p>
+<h3>Mohist</h3>
+<h4>支持</h4>
+<p>Mohist支持Forge模组，Paper系列插件。</p>
+<h4>介绍</h4>
+<blockquote>
+<p>Mohist 是一个全新的 Minecraft Forge 服务端，核心采用 Forge + Paper 结构，开发环境使用 ForgeGradle，支持 Forge mod 和 Paper 系列插件。Mohist 目前稳定性良好，仍在不断更新。---zeruns<br>
+ps:据说现在mod开发者都很讨厌mohist</p>
+</blockquote>
+<h3>SpongeForge</h3>
+<h4>支持</h4>
+<p>SpongeForge支持Forge模组，Sponge插件。</p>
+<h4>介绍</h4>
+<blockquote>
+<p>Sponge 是一个全新的服务端，支持 Sponge 的专用插件，可装 Mod，兼容性比 Cauldron 相比提高了不少，适合开 MOD 服，支持的版本非常高，是目前支持 MOD 的服务端里兼容版本最高的服务端。<br>
+但是 Sponge 本身不支持 Bukkit 插件（即使有兼容层，效果也不是很好，只能支持一般的插件），需要服务器的配置比较高，启动速度不佳。---zeruns</p>
+</blockquote>
+<h2>插件服</h2>
+<p>顾名思义，支持插件的服务端，很多。</p>
+<h3>CubeRite</h3>
+<h4>支持</h4>
+<p>Bukkit插件</p>
+<h4>介绍</h4>
+<blockquote>
+<p>CubeRite 是一个基于 C++ 编写的开源高性能 Minecraft 服务端<br>
+目前 Cuberite 已经可以做到大部分的基于 Bukkit 架构的 Minecraft 服务端（例如 Spigot）的功能，并且在性能方面具有更大的优势。<br>
+作者：PixelBBS <a href="https://www.bilibili.com/read/cv19386482/" rel="nofollow">https://www.bilibili.com/read/cv19386482/</a> 出处：bilibili</p>
+</blockquote>
+<h3>GlowStone</h3>
+<h4>支持</h4>
+<p>Sponge,Bukkit插件</p>
+<h4>介绍</h4>
+<blockquote>
+<p>GlowStone 萤石是一款开源的 Bukkit 服务端，开发者可以根据自己需求修改或制作一个服务端，内置了 Sponge 支持的插件。<br>
+作者：PixelBBS <a href="https://www.bilibili.com/read/cv19386482/" rel="nofollow">https://www.bilibili.com/read/cv19386482/</a> 出处：bilibili</p>
+</blockquote>
+<h3>Akarin</h3>
+<h4>支持</h4>
+<p>Paper系列插件</p>
+<h4>介绍</h4>
+<p>基于 Paper 进行优化的服务端，性能较好</p>
+<h3>Folia</h3>
+<h4>支持</h4>
+<p>Folia支持Paper系列插件</p>
+<h4>介绍</h4>
+<blockquote>
+<p>Folia是PaperMC组织最新的项目，旨在实现真正的多线程和区域化心跳。该项目的目标是提供更好的可伸缩性和性能，并修复一些长期以来限制Minecraft服务器扩展的问题。Folia是由Minecraft优化传奇Spottedleaf开发的Paper的分支版本，旨在为真正多线程的服务器提供无妥协的解决方案，通过全新的API集成，实现了每个区域都具有自己的独立线程池和心跳循环的实现。本文旨在以易于理解的方式呈现信息，并提供一些在官方公告中可能没有涵盖的详细见解。<br>
+Folia项目的优势包括：可有效缩放的性能、局部化的性能优化、更加接近Vanilla单人游戏的实体生成行为、TPS报告的增强以及支持Folia的插件。Folia适用于中型到大型服务器，尤其是那些拥有足够硬件（线程）支持的服务器。对于那些散落的玩家比较多的游戏模式，如生存多人游戏、空岛等，Folia可以完全利用Regioniser提供的性能优势。同时，对于那些想要扩大运营规模的小型服务器网络来说，Folia可以使他们不必过多地复杂化设置。<br>
+Folia项目是一个有着革命性意义的项目，旨在提升Minecraft服务器的性能表现，让游戏体验更加顺畅。<br>
+原文：Folia - Multithreading Coming to your Minecraft server | Paper Chan hideout (paper-chan.moe)<br>
+作者：contextual_bandit<br>
+链接：<a href="https://juejin.cn/post/7216594359115726904" rel="nofollow">https://juejin.cn/post/7216594359115726904</a><br>
+来源：稀土掘金<br>
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<h3>Paper</h3>
+<h4>支持</h4>
+<p>Paper支持Paper系列插件</p>
+<h4>介绍</h4>
+<blockquote>
+<p>PaperMC 通过快速、安全的软件和扩展的插件 API 改进了 Minecraft 的生态系统，作为使用最广泛、性能最稳定、最稳定的软件，提供快速发布和有用的支持。---paper官网</p>
+</blockquote>
+<h3>Pufferfish</h3>
+<h4>支持</h4>
+<p>Pufferfish支持Paper系列插件</p>
+<h4>介绍</h4>
+<p>Pufferfish是Paper的高性能分支，旨在提供企业功能并最大限度地提高性能。</p>
+<h4>Pufferfish Plus</h4>
+<p>Pufferfish Plus是我们Pufferfish的改进版本，其中包括企业支持和其他异步功能，例如异步实体跟踪器和异步寻路系统。在基准测试中，它比标准版本的河豚快约 25-30%。</p>
+<h3>Mirai</h3>
+<p><strong>已停止更新</strong></p>
+<h4>支持</h4>
+<p>支持Paper系列插件</p>
+<h4>介绍</h4>
+<p>来自“未来”的服务器核心,基于 Pufferfish.此项目是实验性的，如果您还没有准备好面对可能的错误，则不鼓励在生产环境中使用它。</p>
+<h3>Purpur</h3>
+<h4>支持</h4>
+<p>Purpur支持Paper系列插件</p>
+<h4>介绍</h4>
+<blockquote>
+<p>Purpur 是 Paper 服务器的直接替代品，专为可配置性和新的、有趣的、令人兴奋的游戏玩法而设计 特征。---purpur官网介绍机翻</p>
+</blockquote></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://saltedfishjun.github.io">咸鱼君的备忘录</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","saltedfishjun/saltedfishjun.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+</script>
+
+
+</html>
