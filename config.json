@@ -2,8 +2,9 @@
     "title":"咸鱼君的备忘录",
     "subTitle":"咸鱼君的究极备忘录加博客",
     "avatarUrl":"https://image.saltedfishjun.top/i/2024/07/12/n7hysr.gif",
-    "GMEEK_VERSION":"last"
-}
+    "GMEEK_VERSION":"last",
     "allHead":"<script src='https://saltedfishjun.github.io/assets/GmeekBSZ.js'></script>",
     "script":"<script src='https://saltedfishjun.github.io/assets/GmeekTOC.js'></script>",
+    "bottomText":"转载请注明出处",
     "startSite":"07/20/2024"
+}
