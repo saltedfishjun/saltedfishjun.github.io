@@ -1,13 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>咸鱼君的备忘录</title><link>https://saltedfishjun.github.io</link><description>咸鱼君的究极备忘录加博客</description><copyright>咸鱼君的备忘录</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://image.saltedfishjun.top/i/2024/07/12/n7hysr.gif</url><title>avatar</title><link>https://saltedfishjun.github.io</link></image><lastBuildDate>Thu, 25 Jul 2024 18:43:57 +0000</lastBuildDate><managingEditor>咸鱼君的备忘录</managingEditor><ttl>60</ttl><webMaster>咸鱼君的备忘录</webMaster><item><title>CloudFlare Saas 回源到 tunnel 的办法</title><link>https://saltedfishjun.github.io/post/CloudFlare%20Saas%20-hui-yuan-dao-%20tunnel%20-de-ban-fa.html</link><description># 1.正常接入SAAS #&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>咸鱼君的备忘录</title><link>https://saltedfishjun.github.io</link><description>咸鱼君的究极备忘录加博客</description><copyright>咸鱼君的备忘录</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://image.saltedfishjun.top/i/2024/07/12/n7hysr.gif</url><title>avatar</title><link>https://saltedfishjun.github.io</link></image><lastBuildDate>Thu, 25 Jul 2024 19:05:41 +0000</lastBuildDate><managingEditor>咸鱼君的备忘录</managingEditor><ttl>60</ttl><webMaster>咸鱼君的备忘录</webMaster><item><title>CloudFlare Saas 回源到 tunnel 的办法</title><link>https://saltedfishjun.github.io/post/CloudFlare%20Saas%20-hui-yuan-dao-%20tunnel%20-de-ban-fa.html</link><description># 1.正常接入SAAS #&#13;
 在需要设定的域名下点击SSL/TSL选项，点击自定义主机名，添加一个回退源(这个回退源需要是你等下设定隧道的域名)&#13;
 ![QQ_1721932281112](https://github.com/user-attachments/assets/7620eb89-758e-418d-acc9-6b45cc6b9928)&#13;
 # 2.tunnel绑定域名 #&#13;
 1. 创建隧道，教程[👉](url=https://post.smzdm.com/p/axoekqw2/)&#13;
-2. &#13;
-3. &#13;
 &gt; [!注意]&#13;
-&gt; 隧道使用的域名应该为SAAS回退源设定的域名。</description><guid isPermaLink="true">https://saltedfishjun.github.io/post/CloudFlare%20Saas%20-hui-yuan-dao-%20tunnel%20-de-ban-fa.html</guid><pubDate>Thu, 25 Jul 2024 18:43:38 +0000</pubDate></item><item><title>常用小计</title><link>https://saltedfishjun.github.io/post/chang-yong-xiao-ji.html</link><description>视频嵌入&#13;
+&gt; 创建隧道最后一步添加域名时应该为SAAS回退源设定的域名，在点击提交前按F12进行抓包&#13;
+2. 点击提交后，在网络请求里面找到以`configurations`结尾的一个`PUT`请求，在请求上右键点击编辑并重发，把编辑页面拉到最下面会看到以下内容`--data-raw '{'config':{'ingress':[{'hostname':'你隧道的域名','service':'http://192.168.1.12','originRequest':{}},{'service':'http_status:404'}]}}'`&#13;
+3. 我们需要复制这部分内容`{'hostname':'你隧道的域名','service':'http://192.168.1.12','originRequest':{}}`并粘贴到原本这部分内容后面并修改“你隧道的域名”修改完成后大致如下`--data-raw '{'config':{'ingress':[{'hostname':'隧道域名','service':'http://192.168.1.12','originRequest':{true}},{'hostname':'外部cnamme到saas回退源的域名','service':'http://192.168.1.12','originRequest':{true}},{'service':'http_status:404'}]}}'`&#13;
+&gt; [!注意]&#13;
+&gt; cname到回退源的域名可以是泛域名&#13;
+4. 编辑完成后点击发送，如果正确的话你现在应该能看到有两个域名，一个为你隧道设定域名，一个为刚刚修改时添加的域名，到这一步就基本完成了&#13;
+# 3.附加教程#&#13;
+1. SAAS回源加优选ip[👉](https://www.bilibili.com/video/BV1SM4m1176E/?spm_id_from=333.999.0.0&amp;vd_source=bbe346abc60e23243de9aec110386ef4)&#13;
+2. CloudFlare Saas 回源到 tunnel 的办法[👉](https://www.nodeseek.com/post-98866-1)&#13;
+3. 本地添加网站利用如1Panel/BT之类的建站面版进行反代，把相应服务反代到你的cname到回源域名的那个域名即你想要访问的域名即可。</description><guid isPermaLink="true">https://saltedfishjun.github.io/post/CloudFlare%20Saas%20-hui-yuan-dao-%20tunnel%20-de-ban-fa.html</guid><pubDate>Thu, 25 Jul 2024 18:43:38 +0000</pubDate></item><item><title>常用小计</title><link>https://saltedfishjun.github.io/post/chang-yong-xiao-ji.html</link><description>视频嵌入&#13;
 ```&#13;
 `Gmeek-html&lt;iframe src='//player.bilibili.com/player.html?isOutside=true&amp;aid=1706123415&amp;bvid=BV1cT421k7nr&amp;cid=1615203372&amp;p=1' scrolling='no' border='0' frameborder='no' framespacing='0' allowfullscreen='true' width='100%' height='460px'&gt;&lt;/iframe&gt;`&#13;
 ```&#13;
